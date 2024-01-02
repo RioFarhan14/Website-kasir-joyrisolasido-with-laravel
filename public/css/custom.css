@@ -1,0 +1,185 @@
+.light-green {
+    background-color: #00cf68;
+}
+.softgreen {
+    background-color: #ecf4d6;
+}
+.softblue {
+    background-color: #b4bdff;
+}
+.softyellow {
+    background-color: #fdedd6;
+}
+.softred {
+    background-color: rgb(255, 172, 152);
+}
+.font-weight-600 {
+    font-weight: 600;
+}
+
+.cat-img {
+    width: 4vw;
+    height: 8vh;
+}
+.input-img {
+    width: 12vw;
+    height: 18vh;
+    margin-bottom: 1rem;
+}
+.btn-input {
+    width: 9vw;
+    height: 5vh;
+    background-color: #0ee479;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.category {
+    display: flex;
+    padding: 15px;
+    overflow-x: auto;
+}
+
+.btn-form-customer {
+    background-color: #0ee479;
+    font-weight: bold;
+    color: white;
+    border: none;
+    width: 8vw;
+    height: 8vh;
+    border-radius: 15px;
+}
+.rounded-card {
+    border-radius: 20px;
+}
+.rounded-chart {
+    border-radius: 30px;
+}
+.checkout-item {
+    height: 350px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.menu-checkout {
+    width: 25vw;
+    height: 55vh;
+}
+.hidden {
+    display: none;
+}
+.form-identitas {
+    min-height: 100px;
+    overflow-x: hidden;
+}
+.product {
+    padding: 1rem;
+    margin-top: 2vh;
+    max-height: 58vh;
+    overflow-y: auto;
+}
+.product-checkout img {
+    width: 4vw;
+    border-radius: 5px;
+}
+
+.product-qty button {
+    border-radius: 2px;
+    border: none;
+    width: 25px;
+    height: 25px;
+}
+.product-qty input {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+}
+.top-products {
+    width: 50px;
+    height: 50px;
+}
+
+.tunaibutton,
+.debitbutton {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 17px;
+}
+.tunaibutton.active {
+    background-color: #f8d20d;
+    color: white;
+}
+.debitbutton.active {
+    background-color: #3453bf;
+    color: white;
+}
+.button-buy button {
+    width: 350px;
+    height: 70px;
+    border: none;
+    border-radius: 7px;
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(230, 230, 230);
+    background-color: #00cf68;
+}
+.not-border {
+    border: none;
+}
+.button-buy button:hover {
+    color: #fff;
+    background-color: #0ee479;
+}
+.content-inventory {
+    height: 85vh;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.btn-customer {
+    color: black;
+    background-color: #e6ebff;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 7px 12px;
+    border-radius: 5px;
+}
+.btn-customer.active {
+    background-color: grey;
+}
+.btn-customer:hover {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+.new-customer {
+    display: none;
+}
+.new-customer.active {
+    display: block;
+}
+.old-customer {
+    display: none;
+}
+.old-customer.active {
+    display: block;
+}
+.form-customer {
+    height: 40vh;
+}
+.line {
+    border-top: 2px solid black; /* Warna dan ketebalan garis */
+    width: 25vw;
+}
+@media screen and (min-width: 768px) {
+    .nav-link img {
+        margin-right: 0.5rem;
+    }
+}
