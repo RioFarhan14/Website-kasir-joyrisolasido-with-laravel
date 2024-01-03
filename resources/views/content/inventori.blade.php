@@ -13,7 +13,7 @@
         class="light-green py-2 px-4 rounded not-border font-weight-600 text-decoration-none text-dark">
         Tambah kategori
       </a>
-      @if ($kategori)
+      @if (count($kategori) > 0)
       <a role="button" href="{{ route('produk') }}"
         class="light-green py-2 px-4 mx-2 rounded not-border font-weight-600 text-decoration-none text-dark">
         Tambah produk

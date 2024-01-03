@@ -105,7 +105,7 @@
 
   <div class="row">
     <!-- Tabel pencapaian bulanan -->
-    @if ($salesData)
+    @if (count($salesData) > 0)
     <div class="col-xl-8 col-lg-12">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -142,7 +142,7 @@
     </div>
     @endif
     <!--top seller-->
-    @if ($bestSellingProducts)
+    @if (count($bestSellingProducts) > 0)
     <div class="col-xl-4 col-lg-12">
       <div class="card shadow mb-4 rounded-card">
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
