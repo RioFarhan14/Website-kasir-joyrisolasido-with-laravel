@@ -13,10 +13,12 @@
         class="light-green py-2 px-4 rounded not-border font-weight-600 text-decoration-none text-dark">
         Tambah kategori
       </a>
+      @if ($kategori)
       <a role="button" href="{{ route('produk') }}"
         class="light-green py-2 px-4 mx-2 rounded not-border font-weight-600 text-decoration-none text-dark">
         Tambah produk
       </a>
+      @endif
       <div class="row">
         <div class="col-12 my-3">
           <div class="card shadow mb-4">

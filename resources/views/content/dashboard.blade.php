@@ -13,7 +13,11 @@
                 Pendapatan Bulan ini
               </div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
-                Rp {{ number_format($totalRevenueThisMonth, 0, ',', '.') }}
+                Rp @if ($totalRevenueThisMonth)
+                {{ number_format($totalRevenueThisMonth, 0, ',', '.') }}
+                @else
+                0
+                @endif
               </div>
             </div>
             <div class="col-auto rounded-circle softgreen">
@@ -33,7 +37,11 @@
                 Transaksi Bulan ini
               </div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
+                @if ($totalTransactionsThisMonth)
                 {{ $totalTransactionsThisMonth }}
+                @else
+                0
+                @endif
               </div>
             </div>
             <div class="col-auto rounded-circle softblue">
@@ -53,7 +61,11 @@
                 Produk yang terjual bulan ini
               </div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
+                @if ($totalProductsSoldThisMonth)
                 {{ $totalProductsSoldThisMonth }}
+                @else
+                0
+                @endif
               </div>
             </div>
             <div class="col-auto rounded-circle softyellow">
@@ -73,7 +85,11 @@
                 Stok Produk
               </div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
+                @if ($totalStockAvailable)
                 {{ $totalStockAvailable }}
+                @else
+                0
+                @endif
               </div>
             </div>
             <div class="col-auto rounded-circle softred">
@@ -89,6 +105,7 @@
 
   <div class="row">
     <!-- Tabel pencapaian bulanan -->
+    @if ($salesData)
     <div class="col-xl-8 col-lg-12">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -123,7 +140,9 @@
         </div>
       </div>
     </div>
+    @endif
     <!--top seller-->
+    @if ($bestSellingProducts)
     <div class="col-xl-4 col-lg-12">
       <div class="card shadow mb-4 rounded-card">
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -151,6 +170,7 @@
         </div>
       </div>
     </div>
+    @endif
   </div>
 </div>
 @endsection
