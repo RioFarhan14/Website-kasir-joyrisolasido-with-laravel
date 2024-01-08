@@ -1,4 +1,4 @@
-const BASE_URL = "http://127.0.0.1:8000/";
+const BASE_URL = "http://ppsi.test/";
 $(document).ready(function () {
     // Event delegation untuk .showinvoice
     $(document).on("click", ".showinvoice", function (e) {

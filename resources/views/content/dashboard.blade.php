@@ -119,7 +119,7 @@
               <tr>
                 <th>#</th>
                 <th>Tanggal</th>
-                <th>Tota Transaksi</th>
+                <th>Total Transaksi</th>
                 <th>Total Pendapatan</th>
               </tr>
             </thead>
