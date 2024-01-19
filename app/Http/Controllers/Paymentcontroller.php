@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Detail_Transaction;
+use App\Models\Monthly_income;
 use App\Models\Product;
 use App\Models\Transaction;
 use Carbon\Carbon;
@@ -200,12 +201,35 @@ class Paymentcontroller extends Controller
         }
     
         // Simpan transaksi
-        Transaction::create([
+        $newTransaction = Transaction::create([
             'id' => $idTransaksi,
             'pelanggan_id' => $idPelanggan,
             'total_harga' => $totalHarga,
             'metode_pembayaran' => $metodePembayaran,
         ]);
+        // Mengambil data yang baru saja dibuat
+        $created_at = $newTransaction->created_at;
+        $total_harga_transaksi = $newTransaction->total_harga;
+
+        // Mengekstrak tahun dan bulan dari created_at
+        $monthYear = $created_at->format('Y-m');
+
+        // Memeriksa apakah data bulan ini sudah ada di tabel pencapaian bulanan atau belum
+        $salesData = Monthly_income::where('month', $monthYear)->first();
+
+        // Jika data sudah ada, update nilai total harga dan total transaksi
+        if ($salesData) {
+            $salesData->total_harga += $total_harga_transaksi;
+            $salesData->total_transaksi += 1;
+            $salesData->save();
+        } else {
+            // Jika data belum ada, buat data baru untuk bulan ini
+            Monthly_income::create([
+                'month' => $monthYear,
+                'total_harga' => $total_harga_transaksi,
+                'total_transaksi' => 1,
+            ]);
+        }
     
         // Simpan detail transaksi
         foreach ($products as $productData) {

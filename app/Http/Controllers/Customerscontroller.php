@@ -12,6 +12,7 @@ class Customerscontroller extends Controller
         $customers = Customer::select(
             'id',
             'nama',
+            'no_telepon',
             DB::raw('(SELECT COUNT(*) FROM transactions WHERE transactions.pelanggan_id = customers.id) as totalTransaksi'),
             DB::raw('(SELECT SUM(total_harga) FROM transactions WHERE transactions.pelanggan_id = customers.id) as totalPembelian')
         )

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Detail_Transaction;
+use App\Models\Monthly_income;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -12,15 +13,7 @@ class Reportcontroller extends Controller
     public function index()
     {
         // Pencapaian Penjualan Tiap Bulan
-        $salesData = Transaction::selectRaw('
-        DATE_FORMAT(created_at, "%Y-%m") as month,
-        SUM(total_harga) as total_harga,
-        COUNT(*) as total_transaksi
-    ')
-        ->groupBy('month')
-        ->orderBy('month', 'ASC')
-        ->get();
-    
+        $salesData = Monthly_income::all();
     
         // Produk Terlaris
         $bestSellingProducts = Detail_Transaction::select('produk_id', DB::raw('SUM(jumlah_produk) as total_sold'))

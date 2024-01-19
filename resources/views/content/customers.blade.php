@@ -20,6 +20,7 @@
               <tr>
                 <th>ID</th>
                 <th>Nama Pelanggan</th>
+                <th>No.telepon</th>
                 <th>Total transaksi</th>
                 <th>Total Pembelian</th>
               </tr>
@@ -29,6 +30,7 @@
               <tr>
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->nama }}</td>
+                <td>{{ $item->no_telepon }}</td>
                 <td>{{ $item->totalTransaksi ?? 0 }}</td>
                 <td>Rp. {{ number_format($item->totalPembelian, 0, 2) }}</td>
               </tr>
