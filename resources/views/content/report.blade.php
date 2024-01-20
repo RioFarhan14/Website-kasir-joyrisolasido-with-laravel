@@ -1,11 +1,13 @@
 @extends('layout.main')
+@section('content-meta')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
 @section('content-asset')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  <script src="{{ asset('js/report.js') }}">
-</script>
+<script src="{{ asset('js/sales.js') }}"></script>
+<script src="{{ asset('js/report.js') }}"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap4.min.css" />
 @endsection
@@ -19,7 +21,7 @@
           <h6 class="m-0 font-weight-bold text-secondary">Pencapaian Penjualan Tiap Bulan</h6>
         </div>
         <div class="card-body">
-          <button class="btn btn-success mb-3">Tambah Data</button>
+          <button class="btn btn-success mb-3" id="btn-add">Tambah Data</button>
           <table class="table table-bordered" id="table-pencapaian" width="100%" cellspacing="0">
             <thead>
               <tr>
@@ -38,8 +40,8 @@
                 <td>{{ $data->total_transaksi }}</td>
                 <!-- Jika Anda memiliki data pendapatan, Anda bisa menambahkan kolom ini -->
                 <td>Rp. {{ number_format($data->total_harga, 0, 2) }}</td>
-                <td><button class="btn btn-primary" id="btn-edit" data-sale-id="{{ $data->id }}">Edit</button><button
-                    class="btn btn-danger" id="btn-delete" data-sale-id="{{ $data->id }}">Delete</button></td>
+                <td><button class="btn btn-primary btn-edit" data-sale-id="{{ $data->id }}">Edit</button><button
+                    class="btn btn-danger btn-delete" data-sale-id="{{ $data->id }}">Delete</button></td>
               </tr>
               @endforeach
             </tbody>

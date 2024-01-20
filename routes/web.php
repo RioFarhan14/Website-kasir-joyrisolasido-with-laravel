@@ -51,6 +51,11 @@ Route::middleware(['preventBackAfterLogout', 'auth'])->group(function() {
     Route::get('/laporan', [Reportcontroller::class, 'index'])->name('laporan');
     Route::get('/laporan/{id}', [Reportcontroller::class, 'ReportInvoice'])->name('get.invoice');
 
+    Route::post('/sales/add',[Reportcontroller::class,'add']);
+    Route::get('/sales/{id}',[Reportcontroller::class,'reportsales']);
+    Route::put('/sales/update',[Reportcontroller::class,'update']);
+    Route::delete('/sales/delete/{id}',[Reportcontroller::class,'delete']);
+
     //CRUD
     Route::post('/inventori/kategori', [Categorycontroller::class, 'create'])->name('kategori.create');
     Route::put('/inventori/kategori/{id}', [Categorycontroller::class, 'update'])->name('kategori.update');
