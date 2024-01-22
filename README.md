@@ -1,67 +1,50 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Aplikasi Kasir Joy Risolasido
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi kasir Joy Risolasido dikembangkan dengan tujuan utama untuk memberikan dukungan dalam pengelolaan barang selama proses transaksi. Aplikasi ini dirancang dengan empat fitur utama, yaitu Dashboard, Pembayaran, Inventori, dan Laporan.
 
-## About Laravel
+## Deskripsi Proyek
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Aplikasi kasir Joy Risolasido merupakan solusi pengelolaan transaksi yang dirancang untuk memudahkan proses pembayaran dan pengelolaan inventori. Dengan fokus pada keempat fitur utama, aplikasi ini memberikan kemudahan bagi pengguna dalam melacak informasi, melakukan pembayaran, mengelola stok barang, dan menghasilkan laporan transaksi.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Diagram Alir Data (DFD)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Level 0 DFD
 
-## Learning Laravel
+![Level 0 DFD](url_gambar_level0)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Level 1 DFD - Pembayaran
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+![Level 1 DFD - Pembayaran](url_gambar_pembayaran)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Level 1 DFD - Inventori
 
-## Laravel Sponsors
+![Level 1 DFD - Inventori](url_gambar_inventori)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Level 1 DFD - Laporan
 
-### Premium Partners
+![Level 1 DFD - Laporan](url_gambar_laporan)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Fitur Aplikasi
 
-## Contributing
+1. **Dashboard**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    - Menyediakan tampilan visual komprehensif terkait dengan status keseluruhan sistem.
+    - Memungkinkan pengguna melacak informasi penting dan mengakses ringkasan transaksi.
 
-## Code of Conduct
+2. **Pembayaran**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    - Dirancang untuk menyederhanakan proses pembayaran.
+    - Memastikan transaksi dilakukan dengan mudah dan aman melalui antarmuka yang intuitif.
 
-## Security Vulnerabilities
+3. **Inventori**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    - Memungkinkan pengguna untuk mengelola stok barang secara efisien.
+    - Termasuk penambahan, penghapusan, dan pembaruan informasi inventori.
 
-## License
+4. **Laporan**
+    - Memberikan kemampuan untuk menghasilkan laporan terperinci mengenai aktivitas transaksi dan status inventori.
+    - Menyediakan informasi yang berguna untuk analisis dan pengambilan keputusan.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# Pembuatan_website_kasir
+## Ringkasan Keseluruhan
+
+Aplikasi Kasir Joy Risolasido menyatukan keempat fitur utamanya untuk meningkatkan efisiensi pengelolaan barang dalam konteks transaksi. Dengan memberikan pengguna akses cepat dan informatif, diharapkan aplikasi ini dapat mempermudah pengguna dalam proses transaksi sehari-hari dan meningkatkan efisiensi operasional.
