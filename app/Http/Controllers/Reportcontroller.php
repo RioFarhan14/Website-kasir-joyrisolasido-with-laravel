@@ -102,30 +102,70 @@ class Reportcontroller extends Controller
         }
     }
     public function update(Request $request)
-    {
-        // Validasi request sesuai kebutuhan
-        $request->validate([
-            'bulanTahun' => 'required',
-            'totalTransaksi' => 'required|numeric',
-            'totalPendapatan' => 'required|numeric',
-        ]);
+{
+    try {
+        $this->validateRequest($request);
 
-        // Proses update data
-        $sale = Monthly_income::find($request->sale_id);
+        $sale = $this->findSaleById($request->sale_id);
 
-        if (!$sale) {
-            return response()->json(['error' => 'Data tidak di temukan.'], 404);
+        $existingSale = $this->findSaleByMonth($request->bulanTahun, $request->sale_id);
+
+        if ($existingSale) {
+            $this->mergeSales($sale, $existingSale, $request);
+
+            return response()->json(['message' => 'Data berhasil digabungkan.']);
         }
 
-        $sale->month = $request->bulanTahun;
-        $sale->total_transaksi = $request->totalTransaksi;
-        $sale->total_harga = $request->totalPendapatan;
+        $this->updateSale($sale, $request);
 
-        $sale->save();
-
-        // Beri respons success
         return response()->json(['message' => 'Data berhasil diubah.']);
+    } catch (\Exception $e) {
+        return response()->json(['error' => $e->getMessage()], 500);
     }
+}
+
+private function validateRequest(Request $request)
+{
+    $request->validate([
+        'bulanTahun' => 'required',
+        'totalTransaksi' => 'required|numeric',
+        'totalPendapatan' => 'required|numeric',
+    ]);
+}
+
+private function findSaleById($saleId)
+{
+    $sale = Monthly_income::find($saleId);
+
+    if (!$sale) {
+        throw new \Exception('Data tidak ditemukan.', 404);
+    }
+
+    return $sale;
+}
+
+private function findSaleByMonth($month, $excludeSaleId)
+{
+    return Monthly_income::where('month', $month)->where('id', '<>', $excludeSaleId)->first();
+}
+
+private function mergeSales($sourceSale, $destinationSale, $request)
+{
+    $destinationSale->total_transaksi += $request->totalTransaksi;
+    $destinationSale->total_harga += $request->totalPendapatan;
+    $destinationSale->save();
+
+    $sourceSale->delete();
+}
+
+private function updateSale($sale, $request)
+{
+    $sale->month = $request->bulanTahun;
+    $sale->total_transaksi = $request->totalTransaksi;
+    $sale->total_harga = $request->totalPendapatan;
+    $sale->save();
+}
+
 
     public function delete($id){
         try {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Detail_Transaction;
+use App\Models\Monthly_income;
 use App\Models\Product;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
@@ -27,14 +28,7 @@ class Dashboardcontroller extends Controller
 
         $totalStockAvailable = Product::sum('stok');
 
-        $salesData = Transaction::selectRaw('
-        DATE_FORMAT(created_at, "%Y-%m") as month,
-        SUM(total_harga) as total_harga,
-        COUNT(*) as total_transaksi
-        ')
-        ->groupBy('month')
-        ->orderBy('month', 'DESC')
-        ->limit(5) 
+        $salesData = Monthly_income::limit(5) 
         ->get();
 
 

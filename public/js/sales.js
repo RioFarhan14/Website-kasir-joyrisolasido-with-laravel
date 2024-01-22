@@ -44,38 +44,40 @@ $(document).on("click", "#btn-add", function (e) {
             };
         },
     }).then((result) => {
-        const add = result.value;
-        $.ajax({
-            url: "/sales/add",
-            type: "POST",
-            data: add,
-            headers: {
-                "X-CSRF-TOKEN": csrfToken,
-            },
-            success: function (response) {
-                Swal.fire({
-                    title: "Success",
-                    text: response.message,
-                    icon: "success",
-                    preConfirm: () => {
-                        refresh();
-                    },
-                });
-            },
-            error: function (xhr, status, error) {
-                let errorMessage = "Data yang dimasukkan tidak valid.";
-                if (xhr.status === 404) {
-                    errorMessage = xhr.responseJSON.error; // Ambil pesan error dari respons JSON
-                }
+        if (result.isConfirmed) {
+            const add = result.value;
+            $.ajax({
+                url: "/sales/add",
+                type: "POST",
+                data: add,
+                headers: {
+                    "X-CSRF-TOKEN": csrfToken,
+                },
+                success: function (response) {
+                    Swal.fire({
+                        title: "Success",
+                        text: response.message,
+                        icon: "success",
+                        preConfirm: () => {
+                            refresh();
+                        },
+                    });
+                },
+                error: function (xhr, status, error) {
+                    let errorMessage = "Data yang dimasukkan tidak valid.";
+                    if (xhr.status === 404) {
+                        errorMessage = xhr.responseJSON.error; // Ambil pesan error dari respons JSON
+                    }
 
-                Swal.fire({
-                    title: "Error",
-                    text: errorMessage,
-                    icon: "error",
-                });
-                console.error("Error:", error);
-            },
-        });
+                    Swal.fire({
+                        title: "Error",
+                        text: errorMessage,
+                        icon: "error",
+                    });
+                    console.error("Error:", error);
+                },
+            });
+        }
     });
 });
 
