@@ -10,7 +10,7 @@ Aplikasi kasir Joy Risolasido merupakan solusi pengelolaan transaksi yang diranc
 
 ### Level 0 DFD
 
-![Level 0 DFD]([url_gambar_level0](https://github.com/RioFarhan14/Website-kasir-joyrisolasido-with-laravel/blob/main/public/img/Screenshot%202024-01-22%20105744.png))
+![Level 0 DFD](https://github.com/RioFarhan14/Website-kasir-joyrisolasido-with-laravel/blob/main/public/img/Screenshot%202024-01-22%20105744.png)
 
 ### Level 1 DFD - Pembayaran
 
