@@ -63,3 +63,47 @@ Modul ini menyediakan fungsionalitas untuk menghasilkan laporan terkait aktivita
 ## Ringkasan Keseluruhan
 
 Aplikasi Kasir Joy Risolasido menyatukan keempat fitur utamanya untuk meningkatkan efisiensi pengelolaan barang dalam konteks transaksi. Dengan memberikan pengguna akses cepat dan informatif, diharapkan aplikasi ini dapat mempermudah pengguna dalam proses transaksi sehari-hari dan meningkatkan efisiensi operasional.
+
+## Cara instalasi
+
+Pastikan sebelumnya Anda telah menginstal perangkat lunak berikut:
+
+ - PHP 8 keatas
+ - Composer
+ - Web server(Apache)
+ - Mysql
+ - Git
+   
+### Langkah-langkah Instalasi
+
+    1. Clone Repositori
+    
+       git clone https://github.com/RioFarhan14/Website-kasir-joyrisolasido-with-laravel.git
+       
+    2. Pindah ke Direktori Proyek
+    
+        cd Website-kasir-joyrisolasido-with-laravel
+    
+    3. Salin File .env
+        Duplikat file .env.example dan ganti namanya menjadi .env. Sesuaikan konfigurasi database dan konfigurasi lainnya sesuai kebutuhan Anda.
+
+        cp .env.example .env
+
+    4. Install Dependencies Composer
+
+        composer install
+
+    5. Generate App Key
+
+        php artisan key:generate
+
+    6. Jalankan Migrasi Database dan seeder
+
+        php artisan migrate --seed
+
+    7. Jalankan Server Lokal
+
+        php artisan serve
+
+        
+
