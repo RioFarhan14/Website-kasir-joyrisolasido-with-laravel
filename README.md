@@ -76,32 +76,32 @@ Pastikan sebelumnya Anda telah menginstal perangkat lunak berikut:
    
 ### Langkah-langkah Instalasi
 
-    1. Clone Repositori
+1. Clone Repositori
     
        git clone https://github.com/RioFarhan14/Website-kasir-joyrisolasido-with-laravel.git
        
-    2. Pindah ke Direktori Proyek
+2. Pindah ke Direktori Proyek
     
         cd Website-kasir-joyrisolasido-with-laravel
     
-    3. Salin File .env
-        Duplikat file .env.example dan ganti namanya menjadi .env. Sesuaikan konfigurasi database dan konfigurasi lainnya sesuai kebutuhan Anda.
+3. Salin File .env
+   Duplikat file .env.example dan ganti namanya menjadi .env. Sesuaikan konfigurasi database dan konfigurasi lainnya sesuai kebutuhan Anda.
 
         cp .env.example .env
 
-    4. Install Dependencies Composer
+4. Install Dependencies Composer
 
         composer install
 
-    5. Generate App Key
+5. Generate App Key
 
         php artisan key:generate
 
-    6. Jalankan Migrasi Database dan seeder
+6. Jalankan Migrasi Database dan seeder
 
         php artisan migrate --seed
 
-    7. Jalankan Server Lokal
+7. Jalankan Server Lokal
 
         php artisan serve
 
